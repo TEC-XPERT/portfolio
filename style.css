@@ -1,0 +1,55 @@
+:root{--bg:#f3f5f1;--ink:#14231f;--muted:#4b5b56;--pcb:#0f3d33;--cu:#9c4f17;--cu-l:#e8a063;--line:#d3dad4;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1f1a;--ink:#e9efeb;--muted:#a8b8b1;--pcb:#e8a063;--cu:#e8a063;--cu-l:#e8a063;--line:#27423a;--card:#12291f}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Iowan Old Style",serif;line-height:1.2;margin:0}
+a{color:var(--cu)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--cu-l);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--card);padding:8px;z-index:20}
+.top{position:sticky;top:0;z-index:10;display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.7rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--line)}
+.brand{font:700 1.05rem Georgia,serif;color:var(--ink);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:.2rem 0;border-bottom:2px solid transparent;white-space:nowrap}
+nav a:hover,nav a.on{color:var(--ink);border-color:var(--cu)}
+main{max-width:920px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0 1rem}
+section>h2{font-size:1.7rem;margin-bottom:1.2rem;color:var(--pcb)}
+.hero{display:grid;grid-template-columns:1fr 240px;gap:2rem;align-items:center;padding-top:3rem;position:relative}
+.kicker{margin:0 0 .6rem;color:var(--cu);font-weight:600}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--pcb)}
+.lead{font-size:1.2rem;max-width:34em;margin:1rem 0 1.5rem}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65rem 1.3rem;border:2px solid var(--pcb);border-radius:6px;color:var(--pcb);text-decoration:none;font-weight:600}
+.btn.primary{background:var(--pcb);color:var(--bg)}
+.btn:hover{border-color:var(--cu)}
+.status{color:var(--muted);font-size:.95rem;margin-top:1.2rem}
+.photo{position:relative;width:240px;height:240px;border-radius:50% 50% 50% 8px;overflow:hidden;background:var(--pcb);justify-self:center}
+.photo img,.initials{position:absolute;inset:0;width:100%;height:100%}
+.photo img{object-fit:cover}
+.initials{display:grid;place-items:center;font:700 4rem Georgia,serif;color:var(--cu-l)}
+.trace{grid-column:1/-1;width:100%;height:36px;margin-top:1rem}
+.trace path{fill:none;stroke:var(--cu);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s ease-out .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.item{display:grid;grid-template-columns:170px 1fr;gap:1.2rem;padding:1.3rem 0;border-top:1px solid var(--line)}
+.meta{color:var(--muted);font-size:.92rem;padding-top:.2rem}
+.item h3{font-size:1.2rem}
+.sub{margin:.2rem 0 .6rem;color:var(--muted)}
+.item p{margin:.4rem 0}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.25rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.2rem}
+.card h3{font-size:1.05rem;color:var(--pcb);margin-bottom:.3rem}
+.contact{list-style:none;padding:0;margin:1.2rem 0}
+.contact li{display:grid;grid-template-columns:110px 1fr;padding:.6rem 0;border-top:1px solid var(--line)}
+.contact span{color:var(--muted)}
+.note{color:var(--muted)}
+footer{max-width:920px;margin:3rem auto 0;padding:1.5rem 1.25rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (max-width:720px){
+.hero{grid-template-columns:1fr}.photo{order:-1;width:170px;height:170px;justify-self:start}.initials{font-size:3rem}
+.item{grid-template-columns:1fr;gap:.2rem}
+.top{flex-direction:column;align-items:flex-start;gap:.3rem}
+nav{width:100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.trace path{animation:none;stroke-dashoffset:0}}
